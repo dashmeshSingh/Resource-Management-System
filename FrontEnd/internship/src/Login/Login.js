@@ -6,14 +6,21 @@ import InputAdornment from "@material-ui/core/InputAdornment";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
 import Input from "@material-ui/core/Input";
 import "./Login.css"
+import { Link,Redirect, useHistory } from "react-router-dom";
+import Typist from "react-typist";
+
+
 const details = {
   email: "",
   password: "",
   showpassword: "",
+  
+ 
 };
 const Login = () => {
   const [login, setlogin] = useState(details);
   const [allEntry, setallEntry] = useState([]);
+  const history = useHistory();
 
   const handleInput = (event) => {
     var { name, value } = event.target;
@@ -34,6 +41,24 @@ const Login = () => {
 const handlePasswordChange = (prop) => (event) => {
     setlogin({ ...login, [prop]: event.target.value });
   };  
+
+const validation = () => {
+
+    
+    if(login.email === "admin@gmail.com" && login.password === "hello"){
+      // alert("Login successful");
+        history.push("/Admin");
+      }
+      else if(login.email === "" && login.password === ""){
+        alert("Please enter login credentials")
+      }
+      else{
+        alert("Wrong Login Credentials!!!")
+      }
+
+}
+
+  
   const submitFunction = (event) => {
     event.preventDefault();
     let newEntry = { username : login.email , password : login.password};
@@ -41,16 +66,23 @@ const handlePasswordChange = (prop) => (event) => {
         ...allEntry,
         newEntry
     ]);
-    
-    
-  }
+    }
+
+    // validation();
+  
   return (
     <>
       <div className="main">
         <div className="form_card">
           <form action="" onSubmit={submitFunction}>
-            <h1>WELCOME</h1><br />
-            <hr/><br />
+            <Typist cursor={{show:false}}avgTypingDelay={400}>
+              <Typist.Delay ms={200}/>
+              <h1>WELCOME</h1>
+              </Typist>
+            
+            <br />
+            <hr/><
+              br />
             <div className="username">
               <InputLabel htmlFor="email">ENTER USERNAME</InputLabel>
               <Input
@@ -83,7 +115,10 @@ const handlePasswordChange = (prop) => (event) => {
             </div>
               <br />
             <div className="login">
-              <button type="submit" id='login'>LOGIN</button>
+              
+              {/* <Link to="/Admin"> */}
+              <button type="submit" id='login' onClick={validation}>LOGIN</button>
+              {/* </Link> */}
             </div>
             <div className="forgetPassword">
                 <a href="/">FORGOT PASSWORD</a>
@@ -94,4 +129,5 @@ const handlePasswordChange = (prop) => (event) => {
     </>
   );
 };
+
 export default Login;

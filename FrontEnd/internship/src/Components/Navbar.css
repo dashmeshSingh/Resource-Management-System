@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/* body{
+    background: #134047c7;
+} */
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 3px;
+    background-color: black;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.logo{
+    display: inline-block;
+    padding: 10px;
+    color: white;
+}
+.list li{
+    display: inline-block;
+    padding: 10px;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+a.active_class{
+    color: chartreuse;
+    border-bottom:4px solid chartreuse;
+    padding: 16px;
+
+}
+.logOut button{
+    margin: 10px;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: #FFD8CC ;
+    color: black;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.Linkcolor{
+    color: white;
+    text-decoration: none;
+
+}
