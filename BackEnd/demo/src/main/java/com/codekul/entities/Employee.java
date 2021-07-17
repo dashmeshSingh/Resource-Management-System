@@ -35,6 +35,10 @@ public class Employee {
 	@Column(name="reportingto")
 	private String reportingto;
 
+	@Column(name="Status",columnDefinition = "varchar(255) default 'On Bench'")
+	private String status;
+
+
 	public Employee() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -81,5 +85,12 @@ public class Employee {
 	public void setReportingto(String reportingto) {
 		this.reportingto = reportingto;
 	}
-	
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
 }
