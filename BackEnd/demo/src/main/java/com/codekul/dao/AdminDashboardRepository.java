@@ -1,11 +1,12 @@
 package com.codekul.dao;
 
-import com.codekul.entities.AdminDashboard;
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
+import com.codekul.entities.AdminDashboard;
 
 @Repository
 public interface AdminDashboardRepository extends JpaRepository <AdminDashboard,String>{
@@ -19,7 +20,10 @@ public interface AdminDashboardRepository extends JpaRepository <AdminDashboard,
 	@Query("from AdminDashboard where projectstatus =:projectstatus")
 	List<AdminDashboard> findProjectByStatus(String projectstatus);
 
-//	@Query(value="select * from AdminDashboard where manager=:manager and status=:status",nativeQuery=true)
-//	List<AdminDashboard> findManagerAndStatus(String username, String status);
-//	
+	@Query(value="select * from Admindashboard where manager_id =:managerId group by empname",nativeQuery=true)
+	List<AdminDashboard> findByEmployeeId(int managerId);
+	
+	@Query(value="select distinct projectname from admindashboard where manager_id=:managerId",nativeQuery=true)
+	List<String> findDistinctProjectNameByManagerId(int managerId);
+	
 }

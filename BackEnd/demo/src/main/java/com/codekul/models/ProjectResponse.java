@@ -1,10 +1,10 @@
 package com.codekul.models;
 
-import lombok.Data;
-import lombok.Generated;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import lombok.Data;
+import lombok.Generated;
 
 @Data
 @Generated

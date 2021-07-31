@@ -34,10 +34,9 @@ public class Employee {
 	
 	@Column(name="reportingto")
 	private String reportingto;
-
+	
 	@Column(name="Status",columnDefinition = "varchar(255) default 'On Bench'")
 	private String status;
-
 
 	public Employee() {
 		super();
@@ -93,4 +92,6 @@ public class Employee {
 	public void setStatus(String status) {
 		this.status = status;
 	}
+	
+	
 }

@@ -28,6 +28,9 @@ public class AdminDashboard {
 	@Column(name="Manager")
 	private String Manager;
 	
+	@Column(name="ManagerId")
+	private int managerId;
+	
 	public int getEmpid() {
 		return empid;
 	}
@@ -74,6 +77,14 @@ public class AdminDashboard {
 
 	public void setManager(String manager) {
 		Manager = manager;
+	}
+
+	public int getManagerId() {
+		return managerId;
+	}
+
+	public void setManagerId(int managerId) {
+		this.managerId = managerId;
 	}
 	
 	

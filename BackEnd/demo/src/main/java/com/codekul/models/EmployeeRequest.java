@@ -1,8 +1,11 @@
 package com.codekul.models;
 
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
 import lombok.Data;
 import lombok.Generated;
 
@@ -18,6 +21,8 @@ public class EmployeeRequest {
 	private String role;
 	private String reportingto;
 	private String status;
+	private int totalEmp;
+	private  List<EmployeeResponse> onEmpNameList;
 	
 	public int getEmpid() {
 		return empid;
@@ -56,6 +61,20 @@ public class EmployeeRequest {
 	public void setStatus(String status) {
 		this.status = status;
 	}
+	public int getTotalEmp() {
+		return totalEmp;
+	}
+	public void setTotalEmp(int totalEmp) {
+		this.totalEmp = totalEmp;
+	}
+	public List<EmployeeResponse> getOnEmpNameList() {
+		return onEmpNameList;
+	}
+	public void setOnEmpNameList(List<EmployeeResponse> onEmpNameList) {
+		this.onEmpNameList = onEmpNameList;
+	}
+	
+	
 	
 	
 }
