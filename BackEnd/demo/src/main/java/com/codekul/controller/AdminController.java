@@ -1,13 +1,22 @@
 package com.codekul.controller;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
 import com.codekul.entities.Employee;
 import com.codekul.models.DashboardResponse;
+import com.codekul.models.EmployeeRequest;
 import com.codekul.models.ProjectManagerResponse;
 import com.codekul.service.EmployeeService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping(path="/hrms")
@@ -39,9 +48,9 @@ public class AdminController {
 	}
 
 	@GetMapping("/dashboardDetails")
-	public DashboardResponse fetchDashboardDetails()
+	public DashboardResponse fetchDashboardDetails(@RequestParam String username, @RequestParam String role)
 	{
-		return this.employeeService.fetchDashboardDetails();
+		return this.employeeService.fetchDashboardDetails(username,role);
 	}
 	
 	@GetMapping("/projManager")
@@ -50,7 +59,18 @@ public class AdminController {
 		return this.employeeService.findProjectManager();
 	}
 	
-
+	@GetMapping("/onBenchEmp")
+	public ProjectManagerResponse findOnBenchEmployee(@RequestParam String username)
+	{
+		return this.employeeService.findOnBenchEmployee(username);
+	}
+	
+  
+	@GetMapping("/projManagerName")
+	public ProjectManagerResponse findProjectManagerName(@RequestParam String username)
+	{
+		return this.employeeService.findProjectManageName(username);
+	}
 	
 }
 

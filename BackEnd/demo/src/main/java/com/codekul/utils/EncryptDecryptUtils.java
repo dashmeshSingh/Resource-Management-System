@@ -101,7 +101,7 @@ public class EncryptDecryptUtils {
 	    	EncryptDecryptUtils td= new EncryptDecryptUtils();
 	    	td.generateSharedKey();
 	    	
-	        String target="zebra_lion";
+	        String target="manager";
 	        String encrypted=td.encrypt(target);
 	        String decrypted=td.decrypt(encrypted);
 
