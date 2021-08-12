@@ -1,0 +1,13 @@
+.chart{
+    background: #000;
+    margin: 20px;
+    padding: 20px;
+}
+
+.chart-title{
+    color: white;
+}
+.chart-title:hover{
+    margin-left: 50px;
+    transform: scale(1.1);
+}
