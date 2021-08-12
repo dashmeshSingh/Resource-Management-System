@@ -27,6 +27,7 @@ public class ProjectRequest {
 	private String contactPerson;
 	private String contactPersonContact;
 	private String clientAddress;
+	private int duration;
 
 	public int getProjId() {
 		return projId;
@@ -101,6 +102,12 @@ public class ProjectRequest {
 	}
 	public void setClientAddress(String clientAddress) {
 		this.clientAddress = clientAddress;
+	}
+	public int getDuration() {
+		return duration;
+	}
+	public void setDuration(int duration) {
+		this.duration = duration;
 	}
 	
 	

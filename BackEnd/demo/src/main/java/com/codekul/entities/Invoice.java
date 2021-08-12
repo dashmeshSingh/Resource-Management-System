@@ -25,10 +25,6 @@ public class Invoice {
 	@Column(name="invoiceId")
 	private int invoiceId;
 	
-//	@Id
-//	@Column(name="empid")
-//	private int empid;
-	
 	@Column(name="GSTno")
 	private String GSTno;
 	
@@ -67,6 +63,9 @@ public class Invoice {
 
 	@Column(name="Duration")
 	private int duration;
+	
+	@Column(name="ClientContactPerson")
+	private String clientContactPerson;
 	
 	public int getInvoiceId() {
 		return invoiceId;
@@ -155,6 +154,14 @@ public class Invoice {
 
 	public void setDuration(int duration) {
 		this.duration = duration;
+	}
+
+	public String getClientContactPerson() {
+		return clientContactPerson;
+	}
+
+	public void setClientContactPerson(String clientContactPerson) {
+		this.clientContactPerson = clientContactPerson;
 	}
 	
 	

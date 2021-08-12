@@ -58,6 +58,8 @@ public class Project {
 	@Column(name="ClientAddress")
 	private String clientAddress;
 	
+	@Column(name="Duration")
+	private int duration;
 
 	@Column(name="ManagedBy")
 	private String projManager;
@@ -156,6 +158,14 @@ public class Project {
 
 	public void setClientAddress(String clientAddress) {
 		this.clientAddress = clientAddress;
+	}
+
+	public int getDuration() {
+		return duration;
+	}
+
+	public void setDuration(int duration) {
+		this.duration = duration;
 	}
 
 	
