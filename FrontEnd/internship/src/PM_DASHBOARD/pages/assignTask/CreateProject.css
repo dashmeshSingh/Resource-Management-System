@@ -1,0 +1,22 @@
+#main_con{
+    height: 150vh;
+}
+#form_card{
+    position: relative;
+    top: 0px;
+    width: 35%;
+}
+.AddEmpDetails{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#addEmp :hover{
+    color: rgb(38, 209, 38);
+}
+.Emp_details_show li{
+    list-style: none;
+}
+/* Input{
+    fullWidth : true;
+} */

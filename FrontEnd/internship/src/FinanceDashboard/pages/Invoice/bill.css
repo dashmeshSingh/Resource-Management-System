@@ -1,0 +1,58 @@
+.bill{
+    flex:4;
+    box-sizing: border-box;
+}
+.mainConBill{
+    padding: 50px 110px;
+    background: none;
+    background-color: rgb(236, 244, 255);
+    height: 150vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.head{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    padding: 0 10px;
+}
+.invoiceDetails , .customerDetails{
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+   
+    
+    
+}
+.billing{
+    height: 53%;
+    width: 100%;
+    border: 1px solid black;
+}
+.gstNumber{
+    font-weight: 600;
+    margin-left: 10px;
+
+}
+
+#generatePdf{
+    margin-top: auto;
+    font-size: large;
+    font-weight: 700;
+    position: absolute;
+    top: 220px;
+    right: 110px;
+}
+
+#invoiceno,#clientname,#contactnumber,#contactperson,#clientadd,#projectname{
+    font-weight: 600;
+    margin-left: 30px;
+   
+ 
+}
+
+
+
