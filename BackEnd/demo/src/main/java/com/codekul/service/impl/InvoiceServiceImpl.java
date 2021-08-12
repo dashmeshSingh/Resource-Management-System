@@ -56,6 +56,8 @@ public class InvoiceServiceImpl implements InvoiceService {
 				invoiceResponse.setPaymentdDay(invoice.getPaymentdDay());
 				invoiceResponse.setEmpAssigned(invoice.getEmpAssigned());
 				invoiceResponse.setDuration(invoice.getDuration());
+				invoiceResponse.setTotalEmpAssigned(invoice.getEmpAssigned().size());
+				invoiceResponse.setClientContactPerson(invoice.getClientContactPerson());
 				
 				invoiceDetails.add(invoiceResponse);
 				

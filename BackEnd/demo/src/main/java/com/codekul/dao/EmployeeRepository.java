@@ -40,6 +40,9 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
 	@Query(value="select * from employee where empname in(:names)",nativeQuery=true)
 	List<Employee> findByListOfEmpNames(@Param("names")List<String> names);
 	
+	@Query(value="select * from employee where empname in(:names) LIMIT 1",nativeQuery=true)
+	List<Employee> findByListOfEmpNamesLimitOne(@Param("names")List<String> names);
+	
 
 	@Query(value="select * from Employee where email=:username",nativeQuery=true)
 	List<Employee> findProjManagerName(String username);

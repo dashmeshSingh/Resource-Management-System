@@ -29,7 +29,8 @@ public class InvoiceResponse {
 	private int paymentdDay;
 	private String clientName;
 	private int duration;
-	
+	private int totalEmpAssigned;
+	private String clientContactPerson;
 	
 	public int getInvoiceId() {
 		return invoiceId;
@@ -98,6 +99,18 @@ public class InvoiceResponse {
 	}
 	public void setDuration(int duration) {
 		this.duration = duration;
+	}
+	public int getTotalEmpAssigned() {
+		return totalEmpAssigned;
+	}
+	public void setTotalEmpAssigned(int totalEmpAssigned) {
+		this.totalEmpAssigned = totalEmpAssigned;
+	}
+	public String getClientContactPerson() {
+		return clientContactPerson;
+	}
+	public void setClientContactPerson(String clientContactPerson) {
+		this.clientContactPerson = clientContactPerson;
 	}
 	
 	

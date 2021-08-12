@@ -60,6 +60,8 @@ public class ProjectServiceImpl implements ProjectService{
 			
 			Project projectDetails=projectRepository.save(project);
 			
+			List<Employee>employeeInvoice=employeeRepository.findByListOfEmpNamesLimitOne(project.getEmpAssigned());
+			
 			List<Employee> changeEmpStatus=employeeRepository.findByListOfEmpNames(project.getEmpAssigned());
 			changeEmpStatus.forEach(emp -> {
 				emp.setStatus("Active");
@@ -89,22 +91,23 @@ public class ProjectServiceImpl implements ProjectService{
 			LocalDate endDate=projectDetails.getEndDate();
 			Period periodDiff = Period.between(startDate, endDate);
 			int duration=periodDiff.getDays();
-			changeEmpStatus.forEach(emp -> {
+			
+			employeeInvoice.forEach(emp -> {
 				
 				Invoice invoiceData= new Invoice();
-				
-				
+
 				invoiceData.setProjId(projectDetails.getProjId());
 				invoiceData.setProjectName(project.getProjName());
 				invoiceData.setClientName(project.getClient());
 				invoiceData.setBillingDate(project.getEndDate());
-				invoiceData.setClientContact(project.getContactPersonContact());
+				invoiceData.setClientContact(project.getContactPerson());
 				invoiceData.setEmpAssigned(project.getEmpAssigned());
 				invoiceData.setPaymentdDay(project.getPaymentPerDay());
 				invoiceData.setInvoiceId(project.getPaymentPerDay());
 				invoiceData.setClientAddress(project.getClientAddress());
-				invoiceData.setDuration(duration);
-			
+				invoiceData.setDuration(project.getDuration());
+				invoiceData.setClientContactPerson(project.getContactPersonContact());
+				
 				invoiceList.add(invoiceData);
 
 			});

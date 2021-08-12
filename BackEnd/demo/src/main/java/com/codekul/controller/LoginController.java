@@ -27,16 +27,6 @@ public class LoginController {
 	@Autowired
 	private EmployeeService employeeService;
 
-	//testing only
-	@PostMapping("/addEmp")
-	public String test() {
-	
-		User user=new User();
-		user.setUsername("gustavo.admin@test.com");
-		userRepository.save(user);
-		//userService.addUser();
-		return "Testing successfull";
-	}
 
 	@PostMapping("/login")
 	
