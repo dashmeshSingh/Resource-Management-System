@@ -1,0 +1,29 @@
+
+.addUser{
+    flex: 4;
+}
+.main_con{
+    background-color: rgb(191, 214, 255);
+    height: calc(100vh - 50px);
+   display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form_card{
+    background-color: cornsilk;
+    text-align: center;
+    width: 25%;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 50px;
+    box-shadow: 2px 3px 2px 2px rgba(59, 57, 57, 0.788);
+}
+#add_user , #assign_task{
+    padding: 5px;
+    color: black;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: rgb(191, 214, 255);
+    font-weight: bold;
+    cursor: pointer;
+}

@@ -1,0 +1,10 @@
+.list{
+    text-transform: capitalize;
+    font-weight: 500;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+#del:hover{
+    color: red;
+}
